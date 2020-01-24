@@ -1,5 +1,5 @@
 // JSON to Excel
-function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
+function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel, Encoding="utf-8") {
     //If JSONData is not an object then JSON.parse will parse the JSON string in an Object
     var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
 
@@ -51,7 +51,7 @@ function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
     fileName += ReportTitle.replace(/ /g,"_");
 
     //Initialize file format you want csv or xls
-    var uri = 'data:text/csv;charset=utf-8,' + escape(CSV);
+    var uri = 'data:text/csv;charset=Encoding,' + escape(CSV);
 
     // Now the little tricky part.
     // you can use either>> window.open(uri);
